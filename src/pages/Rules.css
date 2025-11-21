@@ -1,0 +1,130 @@
+
+.rules-container {
+  padding: 24px 32px; 
+  font-family: 'Inter', 'Roboto', sans-serif; 
+  background-color: #ffffff; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.rules-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f4f8; 
+}
+
+.rules-filters {
+  display: flex;
+  gap: 16px; 
+  flex-wrap: wrap;
+}
+
+.rules-filters > * {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.rules-header button {
+  background-color: #3b82f6; 
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rules-header button:hover {
+  background-color: #2563eb; 
+}
+.rules-table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0;
+  font-size: 0.875rem;
+}
+
+.rules-table th {
+  padding: 12px 16px; 
+  text-align: left;
+  background-color: #f7fafc; 
+  color: #4a5568;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.rules-table td {
+  padding: 12px 16px; 
+  text-align: left;
+  border-bottom: 1px solid #edf2f7; 
+  color: #2d3748;
+}
+
+.rules-table tr:nth-child(even) {
+  background-color: #fcfdfe; 
+}
+
+.rules-table tr:hover {
+  background-color: #ebf8ff;
+  cursor: default;
+}
+
+.rules-table td:nth-child(1) {
+    font-weight: 500;
+    color: #1a202c;
+}
+
+.actions-col {
+  min-width: 100px; 
+  text-align: right; 
+  white-space: nowrap; 
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 5px; 
+  margin-left: 4px;
+  cursor: pointer;
+  font-size: 16px; 
+  color: #718096; 
+  transition: color 0.2s;
+}
+
+.icon-btn:hover {
+  color: #3b82f6; 
+}
+
+.rules-table tr td:nth-child(5):contains("Active") {
+    padding: 6px 10px;
+    background-color: #e6fffa; 
+    color: #38a169; 
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block; 
+    text-align: center;
+}
+
+.rules-table tr td:nth-child(5):contains("Inactive") {
+    padding: 6px 10px;
+    background-color: #f7fafc;
+    color: #718096;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+}

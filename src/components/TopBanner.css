@@ -1,0 +1,17 @@
+.top-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b6cb0;
+  color: white;
+  padding: 16px;
+}
+
+.top-banner h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.top-banner .info {
+  font-size: 14px;
+}

@@ -1,0 +1,22 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-area {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 200px;
+  border-right: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+overflow-y: visible;
+}

@@ -1,0 +1,200 @@
+/* ========================= */
+/* TRANSACTIONS SCREEN CSS    */
+/* ========================= */
+
+.transactions-container {
+  padding: 24px 30px;
+  background: #fff;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.transactions-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.add-transaction-btn {
+  padding: 10px 18px;
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s;
+}
+
+.add-transaction-btn:hover {
+  background-color: #2563eb;
+}
+
+/* ========================= */
+/* TABLE FIXED ALIGNMENT     */
+/* ========================= */
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #2d3748;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 8px 16px;
+  text-align: left;   /* DEFAULT LEFT ALIGNMENT */
+  border-bottom: 1px solid #edf2f7;
+}
+
+.transactions-table th {
+  background-color: #f7fafc;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* ONLY THESE CHANGE ALIGNMENT */
+.transactions-table th:nth-child(3),
+.transactions-table td:nth-child(3) {
+  text-align: right; /* Amount */
+}
+
+.transactions-table th:nth-child(7),
+.transactions-table td:nth-child(7) {
+  text-align: right; /* Actions */
+}
+
+.transactions-table th:nth-child(5),
+.transactions-table td:nth-child(5) {
+  text-align: center; /* Status center */
+}
+
+/* Hover row */
+.transactions-table tr:hover {
+  background-color: #fbfdff;
+}
+
+/* Compact padding override */
+.table-row td,
+.table-row th {
+  padding: 8px 16px !important;
+}
+
+/* ========================= */
+/* STATUS BADGE PILL          */
+/* ========================= */
+
+.transactions-table td:nth-child(5):contains("RAW") {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #ffedd5;
+  color: #d97706;
+  font-size: 12px;
+}
+
+.transactions-table td:nth-child(5):contains("MATCHED") {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #d1fae5;
+  color: #047857;
+  font-size: 12px;
+}
+
+/* ========================= */
+/* ACTIONS COLUMN             */
+/* ========================= */
+
+.actions-col {
+  width: 90px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.icon-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 4px;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.icon-btn:hover {
+  opacity: 0.7;
+}
+
+.edit-btn {
+  color: #4299e1;
+}
+
+.delete-btn {
+  color: #f56565;
+}
+
+/* ========================= */
+/* FOOTER ROW                 */
+/* ========================= */
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #718096;
+}
+
+.reconcile-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reconcile-btn {
+  background-color: #ff9800;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(255, 152, 0, 0.4);
+}
+
+.reconcile-btn:hover {
+  background-color: #fb8c00;
+  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.6);
+}
+
+
+.left-align {
+  text-align: left !important;
+}
