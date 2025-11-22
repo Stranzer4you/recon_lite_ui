@@ -28,6 +28,7 @@ import {
   deleteTransactionById,
   getAllTransactions,
   getTransactionById,
+  reconcileTransactions,
   updateTransactionById,
 } from "../api/transactions.api";
 
@@ -50,6 +51,8 @@ const Transaction: React.FC = () => {
   const [loadingEdit, setLoadingEdit] = useState(false);
 
   const [filters, setFilters] = useState<{status?: string;source?: "BANK" | "SYSTEM"; }>({});
+  const [reconciling, setReconciling] = useState(false);
+
 
 
   const [newTxn, setNewTxn] = useState({
@@ -202,6 +205,36 @@ const Transaction: React.FC = () => {
 };
 
 
+const handleReconcile = async () => {
+  setReconciling(true);
+  try {
+    const success = await reconcileTransactions();
+
+    if (success) {
+      setSnackbar({
+        open: true,
+        message: "Reconciliation completed!",
+        severity: "success",
+      });
+      await loadTransactions(currentPage);
+    } else {
+      setSnackbar({
+        open: true,
+        message: "Failed to reconcile transactions",
+        severity: "error",
+      });
+    }
+  } catch (err) {
+    setSnackbar({
+      open: true,
+      message: "Reconciliation error",
+      severity: "error",
+    });
+  } finally {
+    setReconciling(false);
+  }
+};
+
 
   const handlePageChange = (_: any, value: number) => {
     setCurrentPage(value);
@@ -314,12 +347,21 @@ const Transaction: React.FC = () => {
     </div>
 
     {/* Reconcile Right */}
-    <div className="reconcile-right">
-      <button className="reconcile-btn">
-        <SyncIcon fontSize="small" />
-        Reconcile
-      </button>
-    </div>
+   <div className="reconcile-right">
+  <button
+    className="reconcile-btn"
+    onClick={handleReconcile}
+    disabled={reconciling}
+    style={{ opacity: reconciling ? 0.7 : 1 }}
+  >
+    <SyncIcon
+      fontSize="small"
+      className={reconciling ? "spin" : ""}
+    />
+    {reconciling ? "Reconciling..." : "Reconcile"}
+  </button>
+</div>
+
   </div>
 )}
 

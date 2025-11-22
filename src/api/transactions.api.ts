@@ -66,3 +66,14 @@ export const updateTransactionById = async (id: number, payload: { description: 
     return false;
   }
 };
+
+
+export const reconcileTransactions = async () => {
+  try {
+    const res = await http.post("/transactions/reconcile");
+    return res.status === 200;
+  } catch (err) {
+    console.error("Reconcile API failed:", err);
+    return false;
+  }
+};
