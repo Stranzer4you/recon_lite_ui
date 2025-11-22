@@ -203,7 +203,7 @@ const Transaction: React.FC = () => {
 
 
 
-  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
+  const handlePageChange = (_: any, value: number) => {
     setCurrentPage(value);
   };
 
