@@ -351,8 +351,11 @@ const handleReconcile = async () => {
   <button
     className="reconcile-btn"
     onClick={handleReconcile}
-    disabled={reconciling}
-    style={{ opacity: reconciling ? 0.7 : 1 }}
+    disabled={reconciling || transactions.length === 0}
+    style={{ 
+      opacity: reconciling || transactions.length === 0 ? 0.5 : 1,
+      cursor: reconciling || transactions.length === 0 ? "not-allowed" : "pointer"
+    }}
   >
     <SyncIcon
       fontSize="small"
